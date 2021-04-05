@@ -10,12 +10,15 @@
     function validate_data(){
     	$name = $_REQUEST['name'];
     	$email = $_REQUEST['email'];
-
+        $validation_msg = "";
     	if(empty($name)){
     		echo "Name is Required";
     	}
     	else if(!preg_match("/^[a-zA-Z-' ]*$/", $name)){
     		echo "Name is Invalid. Please try Again";
+    	}
+    	else{
+    		echo "Name is Appropriate";
     	}
 
     	if(empty($email)){
@@ -24,6 +27,11 @@
     	else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
     		echo "Email is not appropriate. Please Try again";
     	}
+    	else{
+    		echo " Email is appropriate";
+    	}
+
+
     }
 
 	function accept_data(){
