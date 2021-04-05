@@ -45,8 +45,18 @@
       	}
      }
   }
+
+  function read_many(){
+  	$people = array('Name1','Name2','Name3');
+
+  	foreach ($people as $person) {
+  	    echo "$person <br> <br>";
+  	}
+  }
     accept_data();
     validate_data();
+    echo "<br>";
+    read_many();
 
 	  // $a = 5;
 	  // $b = 10;
