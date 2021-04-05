@@ -6,6 +6,26 @@
 <body>
 
 	<?php
+
+    function validate_data(){
+    	$name = $_REQUEST['name'];
+    	$email = $_REQUEST['email'];
+
+    	if(empty($name)){
+    		echo "Name is Required";
+    	}
+    	else if(!preg_match("/^[a-zA-Z-' ]*$/", $name)){
+    		echo "Name is Invalid. Please try Again";
+    	}
+
+    	if(empty($email)){
+    		echo "Email is required";
+    	}
+    	else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+    		echo "Email is not appropriate. Please Try again";
+    	}
+    }
+
 	function accept_data(){
      if($_SERVER["REQUEST_METHOD"] == "POST"){
      $name = $_REQUEST['name'];
@@ -18,6 +38,7 @@
      }
   }
     accept_data();
+    validate_data();
 
 	  // $a = 5;
 	  // $b = 10;
