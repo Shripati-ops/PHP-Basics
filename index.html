@@ -4,16 +4,13 @@
 	<title></title>
 </head>
 <body>
-    <form method ="post" action ="index.php">
+    <form method ="post" action ="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);"?>
     	Name:<input type = "text" name = "name" placeholder = "Enter Your Name"><br>
     	Email:<input type = "email" name = "email" placeholder = "Enter your Email"><br>
     	<button type = "submit"> Submit </button>
 
 
     </form>
-	<?php
-
-	?>
 
 
 </body>

@@ -74,6 +74,7 @@
         echo chunk_split($str,1,'.');
         echo chop($str,"People");
         echo substr_count($str,'l');
+        echo ltrim($str,'Hel');
 
   }
 
@@ -82,6 +83,7 @@
     validate_data();
     echo "<br>";
     read_many();
+    echo "<br> <br>";
     understanding_string();
 
 	  // $a = 5;
