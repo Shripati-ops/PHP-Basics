@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type = "text/css" href="style.css">
 	<title></title>
 </head>
 <body>
@@ -10,8 +11,8 @@
     function validate_data(){
     	$name = $_REQUEST['name'];
     	$email = $_REQUEST['email'];
-        $validation_msg = "";
-    	if(empty($name)){
+    	echo convert_uuencode(" ".$email);
+    	  if(empty($name)){
     		echo "Name is Required";
     	}
     	else if(!preg_match("/^[a-zA-Z-' ]*$/", $name)){
@@ -46,17 +47,42 @@
      }
   }
 
-  function read_many(){
-  	$people = array('Name1','Name2','Name3');
+  function read_many()
+  {
+      $people = array('Name1' => 1, 'Name2' => 2, 'Name3' => 3);
+      echo "<table class = 'mod1'>
+		<tr class = 'mod2'>
+		<th> ID </th>
+		<th> Name </th>
+		</tr>";
+      foreach ($people as $person => $id) {
+          echo "<tr class = 'mod2'>
+		<td class = 'mod2'> $id </td>
+		<td class='mod2' > $person </tdclass>
+	</tr>";
+      }
+          echo "</table>";
 
-  	foreach ($people as $person) {
-  	    echo "$person <br> <br>";
-  	}
+
   }
+
+
+  function understanding_string(){
+        $str = "Hello People";
+        echo strlen($str);
+        echo convert_uuencode($str);
+        echo chunk_split($str,1,'.');
+        echo chop($str,"People");
+        echo substr_count($str,'l');
+
+  }
+
+   
     accept_data();
     validate_data();
     echo "<br>";
     read_many();
+    understanding_string();
 
 	  // $a = 5;
 	  // $b = 10;

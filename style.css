@@ -1,0 +1,8 @@
+.mod1{
+    border: 4px solid black;
+    padding:3px;
+}
+.mod2{
+    border: 2px dot-dot-dash deeppink;
+    background-color: cadetblue;
+}
